@@ -80,7 +80,7 @@ int main(int argc, char* argv[])
 	/*initialize the servaddr struct*/
 	memset(&servaddr,0,sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
-	servaddr.sin_port = htons(9000);
+	servaddr.sin_port = htons(SERV_PORT);
 	//servaddr.sin_addr.s_addr = INADDR_ANY;
 	
 	
@@ -123,7 +123,8 @@ int main(int argc, char* argv[])
 			    endian_flag = 0xff;
 			else
 			    endian_flag = 0x0;
-			fwrite(&endian_flag,1,1,fp);   
+			
+			//fwrite(&endian_flag,1,1,fp);   
 		
 		/*then execaute pton and connect to server*/
 
@@ -140,6 +141,8 @@ int main(int argc, char* argv[])
 			printf("%s\n",serv_ip);
 			return 0;
 		}
+
+		write(sockfd, &endian_flag, sizeof(endian_flag));
 	
 	printf("connect succeed");
     }

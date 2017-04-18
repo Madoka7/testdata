@@ -33,7 +33,7 @@
 #include <netinet/in.h>
 
 #define _READ_IP_PORT_FROM_
-#define SERV_PORT 8090
+#define SERV_PORT 8000
 int serv_port = -1;
 
 #define SERV_IP "172.20.20.1"

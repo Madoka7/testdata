@@ -105,7 +105,7 @@ int main(int argc, char* argv[])
       printf("/**************************************/\n");
       printf("/*   Usage: recv_csi [server ipaddress]    */\n");
       printf("/**************************************/\n");
-		
+	  return 0;	
 	/*do nothing here*/
 		
 		
